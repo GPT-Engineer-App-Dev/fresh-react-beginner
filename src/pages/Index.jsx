@@ -1,5 +1,6 @@
 import { Container, Text, VStack, Input, Button, Box } from "@chakra-ui/react";
 import { useState } from "react";
+import { supabase } from "../integrations/supabase/index.js";
 import { useSupabaseAuth, SupabaseAuthUI } from "../integrations/supabase/auth.jsx";
 
 const Index = () => {
@@ -10,6 +11,7 @@ const Index = () => {
   const [error, setError] = useState(null);
 
   const handleLogin = async () => {
+    const { supabase } = require("../integrations/supabase/index.js");
     setLoading(true);
     setError(null);
     try {
